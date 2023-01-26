@@ -1,0 +1,140 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 66.5%; /* 1rem = 10px */
+}
+
+:root{
+    --bg-color-primary: #00ABE5;
+    --bg-color-secondary: #00bfff;
+    --bg-body: #f2f3f4;
+
+    --color-hover-light: #87cefa;
+
+    --border-light-grey: 1px solid #dedede;
+
+    --shadow-black-light: 1px 1px 20px rgba(0,0,0,0.2);
+    --shadow-black-dark: 1px 1px 20px rgba(0,0,0,0.4);
+}
+
+body{
+    background-color: var(--bg-body);
+    font-family: 'Roboto', sans-serif;
+}
+
+.container{
+    width: 80%;
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    background-color: var(--bg-color-primary);
+    color: #fff;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 8.5rem 9fr 8.5rem;
+}
+
+.header{
+    background-color: var(--bg-body);
+}
+
+.nav{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.nav__item{
+    width: 20rem;
+    background-color: var(--bg-color-primary);
+    padding: 2rem;
+    font-size: 2.5rem;
+    color: #fff;
+    text-decoration: none;
+    border: 3px solid #fff;
+    border-bottom: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: all .5s;
+}
+
+.nav__item.active{
+    background-color: var(--bg-color-secondary);
+    color: #fff;
+}
+
+.nav__item:hover,.nav__item:active{
+    background-color: var(--color-hover-light);
+    color: #fff;
+}
+
+.nav__item:first-of-type{
+    border-top-left-radius: 20px;
+}
+
+.nav__item:nth-of-type(2n){
+    border-top-right-radius: 20px;
+}
+
+.main{
+    box-shadow: 1px 1px 20px rgba(0,0,0,0.4);
+}
+
+.footer{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #fff;
+    background-color: var(--bg-color-secondary);
+    font-size: 2rem;
+}
+
+/* Responsive media queries */
+
+@media only screen and (max-width: 1250px) {
+    .container{
+        width: 100%;
+        margin: 0;
+    }
+
+    .nav{
+        align-items: stretch;
+    }
+
+    .nav__item{
+        width: 30rem;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .nav__item{
+        width: 100%;
+        border: none;
+    }
+
+    .nav__item:first-of-type{
+        border-top-left-radius: 0;
+    }
+    
+    .nav__item:nth-of-type(2n){
+        border-top-right-radius: 0;
+    }
+}
+
+@media only screen and (max-width: 475px) {
+    .footer{
+        font-size: 1.5rem;
+    }
+}
