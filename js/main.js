@@ -95,4 +95,6 @@ submitBtn.addEventListener("click",() => {
     
     let percentResult = (score / allQuestions.length) * 100;
     mainEl.insertAdjacentHTML("beforeend",`<p class="result-text">Százalék: ${percentResult.toFixed(0)}%</p>`);
+
+    submitBtn.style.pointerEvents = "none";
 });
